@@ -1,0 +1,14 @@
+{
+  "name": "cars-store-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for cars-store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Mendonça",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.8.2"
+  }
+}
