@@ -1,4 +1,4 @@
-function AddProductsController() {
+function AddProductsController(productFactory) {
     this.title = 'Add Products'
 
     this.buttons = {
@@ -8,8 +8,14 @@ function AddProductsController() {
 
     this.product = {}
 
-    this.add = () => {
-        console.log(this.product)
+    this.add = async () => {
+        const result = await productFactory.add(this.product)
+        if (result.error) {
+            alert(result.error)
+        } else {
+            alert('Product successfully added!')
+            window.location.href = '/'
+        }
     }
 
     this.reset = () => {
@@ -19,5 +25,5 @@ function AddProductsController() {
 
 app.component('addProducts', {
     templateUrl: 'src/main/components/addProducts/addProducts.component.html',
-    controller: AddProductsController
+    controller: ['productFactory', AddProductsController]
 })

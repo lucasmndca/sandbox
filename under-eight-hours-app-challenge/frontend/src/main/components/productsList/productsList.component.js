@@ -1,32 +1,32 @@
-function ProductsListController() {
+function ProductsListController($scope, productFactory) {
     this.title = 'Products list'
 
     this.headings = {
         id: 'id',
         name: 'Name',
-        desc: 'Description',
+        description: 'Description',
         cost: 'Purchase cost',
         price: 'Sell price',
         actions: 'Actions'
     }
-
-    this.products = [
-        {
-            id: 1,
-            name: 'Name',
-            desc: 'Description',
-            cost: 123,
-            price: 300
+    
+    this.remove = async (id) => {
+        const result = await productFactory.remove(id)
+        if (result.error) {
+            alert('Could not delete product.')
+        } else {
+            alert('Product successfully deleted')
+            this.list()
         }
-    ]
+    }
 
-    this.delete = (id) => {
-        const idx = this.products.findIndex(p => p.id === id)
-        const deleted = this.products.splice(idx, 1)
+    this.list = async () => {
+        this.products = await productFactory.list()
+        $scope.$apply()
     }
 }
 
 app.component('productsList', {
     templateUrl: 'src/main/components/productsList/productsList.component.html',
-    controller: ProductsListController
+    controller: ['$scope', 'productFactory', ProductsListController]
 })
