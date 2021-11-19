@@ -2,12 +2,12 @@ const express = require('express')
 const cors = require('cors')
 const routes = require('./routes/routes')
 const database = require('./database/database')
+const options = require('./utils/cors/corsUtils')
 
 async function server() {
 
     const app = express()
     const port = 5000
-    const options = { origin: 'http://127.0.0.1:5500/' }
 
     // Connection
     await database.connect()
