@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+    --default-border: 1px solid #999;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+hr {
+    border: var(--default-border);
+    margin: 12px 0;
+}
+
+table {
+    width: 100%;
+    border: var(--default-border);
+}
+
+th {
+    text-align: left;
+}
+
+button {
+    border: var(--default-border);
+    padding: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: #e5e5e5;
+}
+
+.navbar {
+    background-color: #fff;
+    width: 100%;
+    border-bottom: var(--default-border);
+    padding: 10px;
+    display: flex;
+    height: 48px;
+    position: relative;
+}
+
+.navbar ul {
+    margin-left: 16px;
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    padding: 12px;
+    line-height: 30px;
+    color: #222;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #e5e5e5;
+}
+
+.container {
+    width: 100%;
+    padding: 12px;
+}
+
+.card {
+    border: var(--default-border);
+    padding: 12px;
+    background-color: #fff;
+}
+
+.title {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.add-field {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+.add-form-container {
+    max-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.success {
+    background-color: rgb(82, 214, 122);
+}
+
+.danger {
+    background-color: rgb(221, 61, 61);
+    color: #fff
+}

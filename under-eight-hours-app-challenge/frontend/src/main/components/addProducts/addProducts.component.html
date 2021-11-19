@@ -1,0 +1,12 @@
+<h2 class="title">{{$ctrl.title}}</h2>
+<hr>
+<div class="add-form-container">
+    <form>
+        <input class="add-field" type="text" ng-model="$ctrl.product.name" placeholder="Product name">
+        <input class="add-field" type="text" ng-model="$ctrl.product.desc" placeholder="Product description">
+        <input class="add-field" type="number" min="0" ng-model="$ctrl.product.cost" placeholder="Purchase cost (numbers only)">
+        <input class="add-field" type="number" min="0" ng-model="$ctrl.product.price" placeholder="Sell price (numbers only)">
+        <button class="success" ng-click="$ctrl.add()">{{$ctrl.buttons.add}}</button>
+        <button class="danger" type="reset" ng-click="$ctrl.reset()">{{$ctrl.buttons.reset}}</button>
+    </form>
+</div>
