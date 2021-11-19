@@ -1,6 +1,8 @@
 # /under-eight-hours-app-challenge
 A challenge where I was supposed to create a full stack application in less than 8 hours.
-Total time taken: `~4 hours`
+
+## Official time taken: 
+`~4 hours`
 
 ## Stack:
 - /frontend
