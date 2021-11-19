@@ -1,20 +1,24 @@
-<h2 class="title">{{$ctrl.title}}</h2>
-<hr>
-<table>
-    <tr>
-        <th>{{$ctrl.headings.id}}</th>
-        <th>{{$ctrl.headings.name}}</th>
-        <th>{{$ctrl.headings.desc}}</th>
-        <th>{{$ctrl.headings.cost}}</th>
-        <th>{{$ctrl.headings.price}}</th>
-        <th>{{$ctrl.headings.actions}}</th>
-    </tr>
-    <tr ng-repeat="product in $ctrl.products">
-        <td>{{product.id}}</td>
-        <td>{{product.name}}</td>
-        <td>{{product.desc}}</td>
-        <td>$ {{product.cost}}</td>
-        <td>$ {{product.price}}</td>
-        <td><button ng-click="$ctrl.delete(product.id)">Delete</button></td>
-    </tr>
-</table>
+<div ng-init="$ctrl.list()">
+    <h2 class="title">{{$ctrl.title}}</h2>
+    <hr>
+    <table ng-if="$ctrl.products && $ctrl.products.length > 0">
+        <tr>
+            <th>{{$ctrl.headings.name}}</th>
+            <th>{{$ctrl.headings.description}}</th>
+            <th>{{$ctrl.headings.cost}}</th>
+            <th>{{$ctrl.headings.price}}</th>
+            <th>{{$ctrl.headings.actions}}</th>
+        </tr>
+
+        <tr ng-repeat="product in $ctrl.products">
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>$ {{product.cost}}</td>
+            <td>$ {{product.price}}</td>
+            <td><button class="danger" ng-click="$ctrl.remove(product._id)">remove</button></td>
+        </tr>
+
+        <span ng-if="!$ctrl.products">Loading...</span>
+        <span ng-if="$ctrl.products.length === 0">No products found.</span>
+    </table>
+</div>
